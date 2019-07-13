@@ -1,11 +1,8 @@
 .App {
+  position: relative;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  width: 400px;
+  margin: auto;
 }
 
 .App-header {
@@ -22,12 +19,150 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form.listName {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  margin: 30px 0;
+}
+.listName input#listName {
+  position: absolute;
+  border: none;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: left;
+  left: -6px;
+  color: rebeccapurple;
+}
+.listName input#listName:hover {
+  cursor: pointer;
+}
+span.notCompleted {
+  position: relative;
+  font-size: 24px;
+  color: rebeccapurple;
+}
+form.addTodo {
+  border-bottom: 1px solid #ccc;
+}
+.addTodo input#title {
+  position: relative;
+  left: -12px;
+  font-size: 16px;
+  padding: 10px 0;
+  width: 336px;
+  border: none;
+  outline: none;
+}
+.addTodo input#title:hover {
+  cursor: pointer;
+}
+.addTodo input#title::placeholder {
+  font-style: italic;
+}
+.addTodo input#title:focus::placeholder {
+  opacity: 0;
+}
+.addTodo button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  left: 17px;
+  cursor: pointer;
+  color: dimgray;
+  font-weight: 300;
+}
+.addTodo button:disabled:hover {
+  cursor: default;
+}
+.addTodo button:hover {
+  cursor: pointer;
+}
+div.todo-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+ul.todo-list {
+  list-style: none;
+  padding-left: 0;
+}
+li.todo-item:first-child {
+  border-bottom: 1px solid #ccc;
+}
+li.todo-item {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+  text-align: left;
+}
+.toggleCompletedOff {
+  position: relative;
+  width: 1px;
+  background-color: transparent;
+  border: 2px solid lightgrey;
+  padding: 2px 0px 0px 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.toggleCompletedOn {
+  position: relative;
+  width: 1px;
+  background-color: lightgreen;
+  border: 2px solid transparent;
+  padding: 2px 0px 0px 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.title {
+  cursor: pointer;
+}
+.isCompleted {
+  color: #5a5959;
+  cursor: pointer;
+}
+.delete-todo {
+  position: relative;
+  float: right;
+  bottom: 3px;
+  padding: 4px 7px 4px 7px;
+  height: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 14px;
+  font-size: 19px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  left: -4px;
+}
+.delete-todo:hover {
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+.todo-options {
+  margin-top: 40px;
+}
+.todo-options button:disabled {
+  cursor: default;
+  color: #5a5959;
+  visibility: hidden;
+}
+.todo-options button:disabled:hover {
+  color: #5a5959;
+}
+.todo-options button {
+  border: none;
+  font-size: 14px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 250ms ease-in-out;
+  outline: none;
+  background-color: transparent;
+}
+.todo-options button:hover {
+  color: #ff0000;
 }

@@ -1,23 +1,9 @@
-.App {
+.TodoContainer {
   position: relative;
   text-align: center;
   width: 400px;
   margin: auto;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  font-family: Arial, Helvetica, sans-serif;
 }
 form.listName {
   display: grid;
@@ -165,4 +151,42 @@ li.todo-item {
 }
 .todo-options button:hover {
   color: #ff0000;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    margin: 0 auto;
+  }
+  .TodoContainer {
+    box-sizing: border-box;
+    max-width: 370px;
+  }
+  form.list-name {
+    width: 370px;
+  }
+  .listName input#listName {
+    left: 20px;
+  }
+  .addTodo input#title {
+    left: 10px;
+    width: 314px;
+  }
+  span.notCompleted {
+    right: 20px;
+  }
+  .addTodo button {
+    left: -7px;
+  }
+  form.addTodo {
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+  }
+  li.todo-item {
+    width: 350px;
+    margin: 0 auto;
+  }
+  .delete-todo {
+    left: -10px;
+  }
 }

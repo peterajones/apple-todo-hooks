@@ -124,20 +124,20 @@ class TodoItems extends React.Component {
 
 class TodoListOptions extends React.Component {
   render() {
-    const { todos, clearTodos, toggleCompleted, toggleHidden } = this.props;
+    const { todos, toggleCompleted } = this.props;
     const completed = todos.filter((todos) => todos.completed);
     const hidden = todos.filter((todos) => todos.hidden);
     return (
       <div className="todo-options">
-        <button onClick={clearTodos.bind(this)} disabled={todos.length === 0}>
+        {/* <button onClick={clearTodos.bind(this)} disabled={todos.length === 0}>
           Clear List
-        </button>
+        </button> */}
         <button onClick={toggleCompleted.bind(this)} disabled={completed.length === 0}>
           {hidden.length === 0 ? 'Hide Completed' : 'Show Completed'}
         </button>
-        <button onClick={toggleHidden.bind(this)} disabled={todos.length === 0}>
-          {hidden.length !== 0 ? 'Show All' : 'Hide All'}
-        </button>
+        {/* <button onClick={toggleHidden.bind(this)} disabled={todos.length === 0}>
+          {hidden.length === 0 ? 'Hide All' : 'Show All'}
+        </button> */}
       </div>
     );
   }
@@ -244,7 +244,7 @@ class TodoList extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="TodoContainer">
         <ListName todos={this.state.todos} />
         <TodoForm addTodo={this.addTodo} />
         <TodoItems
@@ -259,7 +259,7 @@ class TodoList extends React.Component {
           toggleCompleted={this.toggleCompleted}
           toggleHidden={this.toggleHidden}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }

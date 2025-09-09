@@ -1,36 +1,66 @@
-## Apple style Todo List in React
+## Apple Style Todo List in React
 
-The inspiration for this project came from a code challenge. As you can see from the image below, there is an input field and a submit button 'Add'.
+A modern React todo application inspired by Apple's Reminders app, featuring a clean interface and intuitive functionality. Originally created from a code challenge, this project has been fully refactored to use modern React patterns including functional components, hooks, and modular architecture.
 
-After typing in a 'title' for your todo item and submitting the form, your item will show up in the list of todos in the order that they are added. Clicking on a todo item will put a line through the item indicating that it has been completed.
+### Key Features
 
-There is also a line of text under the form which dynamically keeps track of the number of tasks and how many are remaining to be completed.
+- **Apple-inspired Design**: Clean, minimalist interface matching Apple's Reminders app aesthetic
+- **Smart Todo Management**: Click to complete, automatic hiding of completed items
+- **Persistent Storage**: Automatically saves todos and list name to localStorage
+- **Real-time Counters**: Dynamic tracking of remaining tasks
+- **Modern React Architecture**: Fully refactored with hooks and functional components
 
 ![](images/sample.png)
 
-It's *very* simple and I thought I could make this a lot better adding some styling and additional functionality similar to Apple's Reminders app.
+### How It Works
 
-Starting from the top of the app, the number of uncompleted todos is to the right of the list name. The list name is editable by clicking on it (it default to TODO LIST).
+- **Editable List Name**: Click the list name to edit (defaults to "Todo List")
+- **Add Todos**: Type in the input field and click the + button to add items
+- **Complete Todos**: Click any todo item to mark it as complete and automatically hide it
+- **Show/Hide Completed**: Toggle visibility of completed items with the button below the list
+- **Delete Completed**: Completed items show a delete button (–) for permanent removal
+- **Undo Completion**: Click a completed item to mark it as incomplete and move it back to the active list
 
-The input field for adding a todo has been styled to remove the default borders and the submit button has been styled to mimic the Apple app.
-
-After you add a couple of todos, they will appear below the input field in the order they were added with the newest todo on the top of the list.
-
-Clicking on a todo item will remove it from the list but the completed items are still accessible by clicking on the 'Show Completed' link below the list. The completed items now have a green indicator to the left of the item name to differentiate them from the uncompleted items. There is also a red 'delete' icon on the right side of the completed item. Deleteing a todo item will remove it from localStorage. Clicking on a completed item will mark it as not completed - the green indicator is removed as is the delete icon.
-
-The 'Show Completed' link has now changed to 'Hide Completed' which upon clicking will hide all of the completed items showing only the uncompleted todo items.
+All data is automatically saved to your browser's localStorage.
 
 
-## How to get started
+## Getting Started
 
-In the project directory, you can run:
+### Installation
 
-### `npm install` - this installs the project's dependencies
+```bash
+npm install
+```
 
-Now you can run:
+### Development
 
-### `npm start`
+```bash
+npm start
+```
 
-This will run the app in development mode.<br>
-Open [http://localhost:5678](http://localhost:5678) to view the app in the browser.
+Runs the app in development mode at [http://localhost:5678](http://localhost:5678)
+
+### Build
+
+```bash
+npm run build
+```
+
+Builds the app for production to the `build` folder.
+
+### Testing
+
+```bash
+npm test
+```
+
+Runs the test suite in interactive watch mode.
+
+## Technical Details
+
+- **React 18**: Modern React with concurrent features
+- **Functional Components**: All components use hooks instead of class components
+- **Custom Hooks**: Custom `useLocalStorage` hook for persistent data
+- **Modular Architecture**: Components are separated into individual files
+- **Modern JavaScript**: ES6+ features throughout
 

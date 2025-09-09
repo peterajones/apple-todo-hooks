@@ -4,7 +4,15 @@ function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      if (!item) return initialValue;
+      
+      // Handle plain strings (legacy data) vs JSON
+      if (item.startsWith('"') && item.endsWith('"') || item.startsWith('[') || item.startsWith('{')) {
+        return JSON.parse(item);
+      } else {
+        // Plain string value, return as-is
+        return item;
+      }
     } catch (error) {
       console.error(`Error reading localStorage key "${key}":`, error);
       return initialValue;

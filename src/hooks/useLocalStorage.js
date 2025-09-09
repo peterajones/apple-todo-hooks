@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable no-mixed-operators */
+import { useState } from 'react';
 
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
